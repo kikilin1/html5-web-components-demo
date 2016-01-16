@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <titile>web components demo</titile>
+    <style>
+        .chat-thumbnail{
+            width: 200px;
+            height: 80px;
+            background-color: aquamarine;
+            margin: 0;
+            border: 1px solid rgb(220,220,235);
+            padding: 3px;
+            
+        
+        
+        
+        
+        
+        }
+        chat-thumbnail h5, .chat-thumbnail h6{
+            margin: 0;
+            margin-top: 5px;
+        }
+    
+    
+    
+    
+    
+    
+    
+    </style>
+    
+    
+    </head>
+<body>
+    <chat-thumbnail uname="kitty" sts="Doing web development!"></chat-thumbnail>
+    <chat-thumbnail uname="julian" sts="I don't know where i'm going tonight"></chat-thumbnail>
+    <chat-thumbnail uname="steve" sts="who won miss universe"></chat-thumbnail>
+    <chat-thumbnail uname="obama" sts="i maybe"></chat-thumbnail>
+    <script>
+        var ChatThumbnail = Object.create(HTMLElement.prototype);
+        ChatThumbnail.createdCallback=function(){
+            this.innerHTML = '<div class="chat-thumbnail">'+
+                                '<h5>'+this.getAttribute('uname')+'</h5>'+
+                               '<h6>'+this.getAttribute('sts')+'</h6>'+
+                                '</div>';
+            
+        
+        
+        }
+        document.registerElement('chat-thumbnail',{prototype: chatThumbnail});
+    
+    
+    
+    
+    </script>
+    </body>
+</html>
