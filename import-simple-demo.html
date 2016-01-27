@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="import" id="menu-import" href="import-simple-source.html">
+    </head>
+    <body>
+        <h1>This is a site demonstrating html5 imports</h1>
+        <div id="box1"></div>
+        <h1>We can have multiple elements from our import inserted into our page</h1>
+        <div id="box2"></div>
+        <script>
+            var hellos = document.querySelector("#menu-import").import.getElementById("hellos")
+            document.getElementById("box1").appendChild(hellos.cloneNode(true));
+            var goodbyes = document.querySelector("#menu-import").import.getElementById("goodbyes");
+            document.getElementById("box2").appendChild(goodbyes.cloneNode(true));
+        </script>
+    </body>
+</html>
